@@ -27,7 +27,8 @@ int Solve(vector<int>&max_candy, int n, int k) {
 			if (j == 0) {
 				dp[i][j] = dp[i - 1][j];
 			} else {
-				dp[i][j] = (mod + dp[i][j - 1] + dp[i - 1][j] - ((j - max_candy[i] - 1 >= 0) ? dp[i - 1][j - max_candy[i] - 1] : 0)) % mod;
+				dp[i][j] = (mod + dp[i][j - 1] + dp[i - 1][j] - 
+					((j - max_candy[i] - 1 >= 0) ? dp[i - 1][j - max_candy[i] - 1] : 0)) % mod;
 			}
 		}
 	}
